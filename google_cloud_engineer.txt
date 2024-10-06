@@ -85,7 +85,7 @@ B. Cloud Composer
 C. Managed Instance Group
 D. Unmanaged Instance Group
 
-Abs: C
+Abs: A
 
 Q12. You have a Dockerfile that you need to deploy on Kubernetes Engine. What should you do?
 A. Use kubectl app deploy <dockerfilename>.
@@ -141,7 +141,7 @@ B. Use Cloud Storage Object Lifecycle Management using Age conditions with SetSt
 C. Use gsutil rewrite and set the Delete action to 275 days (365-90).
 D. Use gsutil rewrite and set the Delete action to 365 days.
 
-Ans: A
+Ans: B
 
 Q19. You have a Linux VM that must connect to Cloud SQL. You created a service account with the appropriate access rights. You want to make sure that the VM uses this service account instead of the default Compute Engine service account. What should you do?
 A. When creating the VM via the web console, specify the service account under the 'Identity and API Access' section.
@@ -176,7 +176,7 @@ D. Execute the Deployment Manager template using the ג€"-preview option in th
 
 Ans: D
 
-Q22.
+Q23.
 
 Q24. You have a project for your App Engine application that serves a development environment. The required testing has succeeded and you want to create a new project to serve as your production environment. What should you do?
 A. Use gcloud to create the new project, and then deploy your application to the new project.
@@ -192,7 +192,7 @@ B. Add the auditors group to two new custom IAM roles.
 C. Add the auditor user accounts to the 'logging.viewer' and 'bigQuery.dataViewer' predefined IAM roles.
 D. Add the auditor user accounts to two new custom IAM roles.
 
-Ans: C
+Ans: A
 
 Q26. You need to set up permissions for a set of Compute Engine instances to enable them to write data into a particular Cloud Storage bucket. You want to follow
 Google-recommended practices. What should you do?
@@ -201,7 +201,7 @@ B. Create a service account with an access scope. Use the access scope 'https://
 C. Create a service account and add it to the IAM role 'storage.objectCreator' for that bucket.
 D. Create a service account and add it to the IAM role 'storage.objectAdmin' for that bucket.
 
-Ans: D
+Ans: C
 
 Q27. You have sensitive data stored in three Cloud Storage buckets and have enabled data access logging. You want to verify activities for a particular user for these buckets, using the fewest possible steps. You need to verify the addition of metadata labels and which files have been viewed from those buckets. What should you do?
 A. Using the GCP Console, filter the Activity log to view the information.
@@ -250,6 +250,8 @@ B. For each project, create a Stackdriver account. In each project, create a ser
 C. Configure a single Stackdriver account, and link all projects to the same account.
 D. Configure a single Stackdriver account for one of the projects. In Stackdriver, create a Group and add the other project names as criteria for that Group.
 
+Ans: C
+
 Q33. You are deploying an application to a Compute Engine VM in a managed instance group. The application must be running at all times, but only a single instance of the VM should run per GCP project. How should you configure the instance group?
 A. Set autoscaling to On, set the minimum number of instances to 1, and then set the maximum number of instances to 1.
 B. Set autoscaling to Off, set the minimum number of instances to 1, and then set the maximum number of instances to 1.
@@ -296,7 +298,7 @@ B. Run gcloud iam roles describe roles/spanner.databaseUser. Add the users to a 
 C. Run gcloud iam roles describe roles/spanner.viewer - -project my-project. Add the users to the role.
 D. Run gcloud iam roles describe roles/spanner.viewer - -project my-project. Add the users to a new group. Add the group to the role.
 
-Ans:A
+Ans: B
 
 Q39. You create a new Google Kubernetes Engine (GKE) cluster and want to make sure that it always runs a supported and stable version of Kubernetes. What should you do?
 A. Enable the Node Auto-Repair feature for your GKE cluster.
@@ -506,3 +508,1171 @@ D. Deploy the container on GKE with cluster autoscaling and horizontal pod autos
 
 Ans: B
 
+Q66. Your company has an existing GCP organization with hundreds of projects and a billing account. Your company recently acquired another company that also has hundreds of projects and its own billing account. You would like to consolidate all GCP costs of both GCP organizations onto a single invoice. You would like to consolidate all costs as of tomorrow. What should you do?
+A. Link the acquired company's projects to your company's billing account.
+B. Configure the acquired company's billing account and your company's billing account to export the billing data into the same BigQuery dataset.
+C. Migrate the acquired company's projects into your company's GCP organization. Link the migrated projects to your company's billing account.
+D. Create a new GCP organization and a new billing account. Migrate the acquired company's projects and your company's projects into the new GCP organization and link the projects to the new billing account.
+
+Ans: A
+
+Q67
+
+Ans:
+
+Q68.For analysis purposes, you need to send all the logs from all of your Compute Engine instances to a BigQuery dataset called platform-logs. You have already installed the Cloud Logging agent on all the instances. You want to minimize cost. What should you do?
+
+A. 1. Give the BigQuery Data Editor role on the platform-logs dataset to the service accounts used by your instances. 2. Update your instances' metadata to add the following value: logs-destination: bq://platform-logs.
+B. 1. In Cloud Logging, create a logs export with a Cloud Pub/Sub topic called logs as a sink. 2. Create a Cloud Function that is triggered by messages in the logs topic. 3. Configure that Cloud Function to drop logs that are not from Compute Engine and to insert Compute Engine logs in the platform-logs dataset.
+C. 1. In Cloud Logging, create a filter to view only Compute Engine logs. 2. Click Create Export. 3. Choose BigQuery as Sink Service, and the platform-logs dataset as Sink Destination.
+D. 1. Create a Cloud Function that has the BigQuery User role on the platform-logs dataset. 2. Configure this Cloud Function to create a BigQuery Job that executes this query: INSERT INTO dataset.platform-logs (timestamp, log) SELECT timestamp, log FROM compute.logs WHERE timestamp > DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY) 3. Use Cloud Scheduler to trigger this Cloud Function once a day.
+
+Ans: C
+
+Q69. You are using Deployment Manager to create a Google Kubernetes Engine cluster. Using the same Deployment Manager deployment, you also want to create a
+DaemonSet in the kube-system namespace of the cluster. You want a solution that uses the fewest possible services. What should you do?
+
+A. Add the cluster's API as a new Type Provider in Deployment Manager, and use the new type to create the DaemonSet.
+B. Use the Deployment Manager Runtime Configurator to create a new Config resource that contains the DaemonSet definition.
+C. With Deployment Manager, create a Compute Engine instance with a startup script that uses kubectl to create the DaemonSet.
+D. In the cluster's definition in Deployment Manager, add a metadata that has kube-system as key and the DaemonSet manifest as value.
+
+Ans: A
+
+Q70. You are building an application that will run in your data center. The application will use Google Cloud Platform (GCP) services like AutoML. You created a service account that has appropriate access to AutoML. You need to enable authentication to the APIs from your on-premises environment. What should you do?
+
+A. Use service account credentials in your on-premises application.
+B. Use gcloud to create a key file for the service account that has appropriate permissions.
+C. Set up direct interconnect between your data center and Google Cloud Platform to enable authentication for your on-premises applications.
+D. Go to the IAM & admin console, grant a user account permissions similar to the service account permissions, and use this user account for authentication from your data center.
+
+Ans: B
+
+Q71. You are using Container Registry to centrally store your company's container images in a separate project. In another project, you want to create a Google
+Kubernetes Engine (GKE) cluster. You want to ensure that Kubernetes can download images from Container Registry. What should you do?
+
+A. In the project where the images are stored, grant the Storage Object Viewer IAM role to the service account used by the Kubernetes nodes.
+B. When you create the GKE cluster, choose the Allow full access to all Cloud APIs option under 'Access scopes'.
+C. Create a service account, and give it access to Cloud Storage. Create a P12 key for this service account and use it as an imagePullSecrets in Kubernetes.
+D. Configure the ACLs on each image in Cloud Storage to give read-only access to the default Compute Engine service account.
+
+Ans: A
+
+Q72. 
+
+Ans:
+
+Q73. You are setting up a Windows VM on Compute Engine and want to make sure you can log in to the VM via RDP. What should you do?
+
+A. After the VM has been created, use your Google Account credentials to log in into the VM.
+B. After the VM has been created, use gcloud compute reset-windows-password to retrieve the login credentials for the VM.
+C. When creating the VM, add metadata to the instance using 'windows-password' as the key and a password as the value.
+D. After the VM has been created, download the JSON private key for the default Compute Engine service account. Use the credentials in the JSON file to log in to the VM.
+
+Ans: B
+
+Q74. You want to configure an SSH connection to a single Compute Engine instance for users in the dev1 group. This instance is the only resource in this particular
+Google Cloud Platform project that the dev1 users should be able to connect to. What should you do?
+
+A. Set metadata to enable-oslogin=true for the instance. Grant the dev1 group the compute.osLogin role. Direct them to use the Cloud Shell to ssh to that instance.
+B. Set metadata to enable-oslogin=true for the instance. Set the service account to no service account for that instance. Direct them to use the Cloud Shell to ssh to that instance.
+C. Enable block project wide keys for the instance. Generate an SSH key for each user in the dev1 group. Distribute the keys to dev1 users and direct them to use their third-party tools to connect.
+D. Enable block project wide keys for the instance. Generate an SSH key and associate the key with that instance. Distribute the key to dev1 users and direct them to use their third-party tools to connect.
+
+Ans: A
+
+Q75. You need to produce a list of the enabled Google Cloud Platform APIs for a GCP project using the gcloud command line in the Cloud Shell. The project name is my-project. What should you do?
+
+A. Run gcloud projects list to get the project ID, and then run gcloud services list --project <project ID>.
+B. Run gcloud init to set the current project to my-project, and then run gcloud services list --available.
+C. Run gcloud info to view the account value, and then run gcloud services list --account <Account>.
+D. Run gcloud projects describe <project ID> to verify the project value, and then run gcloud services list --available.
+
+Ans: A
+
+Q76. You are building a new version of an application hosted in an App Engine environment. You want to test the new version with 1% of users before you completely switch your application over to the new version. What should you do?
+
+A. Deploy a new version of your application in Google Kubernetes Engine instead of App Engine and then use GCP Console to split traffic.
+B. Deploy a new version of your application in a Compute Engine instance instead of App Engine and then use GCP Console to split traffic.
+C. Deploy a new version as a separate app in App Engine. Then configure App Engine using GCP Console to split traffic between the two apps.
+D. Deploy a new version of your application in App Engine. Then go to App Engine settings in GCP Console and split traffic between the current version and newly deployed versions accordingly.
+
+Ans: D
+
+Q77. You need to provide a cost estimate for a Kubernetes cluster using the GCP pricing calculator for Kubernetes. Your workload requires high IOPs, and you will also be using disk snapshots. You start by entering the number of nodes, average hours, and average days. What should you do next?
+
+A. Fill in local SSD. Fill in persistent disk storage and snapshot storage.
+B. Fill in local SSD. Add estimated cost for cluster management.
+C. Select Add GPUs. Fill in persistent disk storage and snapshot storage.
+D. Select Add GPUs. Add estimated cost for cluster management.
+
+Ans: A
+
+Q78. You are using Google Kubernetes Engine with autoscaling enabled to host a new application. You want to expose this new application to the public, using HTTPS on a public IP address. What should you do?
+
+A. Create a Kubernetes Service of type NodePort for your application, and a Kubernetes Ingress to expose this Service via a Cloud Load Balancer.
+B. Create a Kubernetes Service of type ClusterIP for your application. Configure the public DNS name of your application using the IP of this Service.
+C. Create a Kubernetes Service of type NodePort to expose the application on port 443 of each node of the Kubernetes cluster. Configure the public DNS name of your application with the IP of every node of the cluster to achieve load-balancing.
+D. Create a HAProxy pod in the cluster to load-balance the traffic to all the pods of the application. Forward the public traffic to HAProxy with an iptable rule. Configure the DNS name of your application using the public IP of the node HAProxy is running on.
+
+Ans: A
+
+Q79. You need to enable traffic between multiple groups of Compute Engine instances that are currently running two different GCP projects. Each group of Compute
+Engine instances is running in its own VPC. What should you do?
+
+A. Verify that both projects are in a GCP Organization. Create a new VPC and add all instances.
+B. Verify that both projects are in a GCP Organization. Share the VPC from one project and request that the Compute Engine instances in the other project use this shared VPC.
+C. Verify that you are the Project Administrator of both projects. Create two new VPCs and add all instances.
+D. Verify that you are the Project Administrator of both projects. Create a new VPC and add all instances.
+
+Ans: B
+
+Q80. You want to add a new auditor to a Google Cloud Platform project. The auditor should be allowed to read, but not modify, all project items.
+How should you configure the auditor's permissions?
+
+A. Create a custom role with view-only project permissions. Add the user's account to the custom role.
+B. Create a custom role with view-only service permissions. Add the user's account to the custom role.
+C. Select the built-in IAM project Viewer role. Add the user's account to this role.
+D. Select the built-in IAM service Viewer role. Add the user's account to this role.
+
+Ans: C
+
+Q81. You are operating a Google Kubernetes Engine (GKE) cluster for your company where different teams can run non-production workloads. Your Machine Learning
+(ML) team needs access to Nvidia Tesla P100 GPUs to train their models. You want to minimize effort and cost. What should you do?
+
+A. Ask your ML team to add the ג€accelerator: gpuג€ annotation to their pod specification.
+B. Recreate all the nodes of the GKE cluster to enable GPUs on all of them.
+C. Create your own Kubernetes cluster on top of Compute Engine with nodes that have GPUs. Dedicate this cluster to your ML team.
+D. Add a new, GPU-enabled, node pool to the GKE cluster. Ask your ML team to add the cloud.google.com/gke -accelerator: nvidia-tesla-p100 nodeSelector to their pod specification.
+
+Ans: D
+
+Q82. Your VMs are running in a subnet that has a subnet mask of 255.255.255.240. The current subnet has no more free IP addresses and you require an additional
+10 IP addresses for new VMs. The existing and new VMs should all be able to reach each other without additional routes. What should you do?
+
+A. Use gcloud to expand the IP range of the current subnet.
+B. Delete the subnet, and recreate it using a wider range of IP addresses.
+C. Create a new project. Use Shared VPC to share the current network with the new project.
+D. Create a new subnet with the same starting IP but a wider range to overwrite the current subnet.
+
+Ans: A
+
+Q83. Your organization uses G Suite for communication and collaboration. All users in your organization have a G Suite account. You want to grant some G Suite users access to your Cloud Platform project. What should you do?
+
+A. Enable Cloud Identity in the GCP Console for your domain.
+B. Grant them the required IAM roles using their G Suite email address.
+C. Create a CSV sheet with all users' email addresses. Use the gcloud command line tool to convert them into Google Cloud Platform accounts.
+D. In the G Suite console, add the users to a special group called cloud-console-users@yourdomain.com. Rely on the default behavior of the Cloud Platform to grant users access if they are members of this group.
+
+Ans: B
+
+Q84. You have a Google Cloud Platform account with access to both production and development projects. You need to create an automated process to list all compute instances in development and production projects on a daily basis. What should you do?
+
+A. Create two configurations using gcloud config. Write a script that sets configurations as active, individually. For each configuration, use gcloud compute instances list to get a list of compute resources.
+B. Create two configurations using gsutil config. Write a script that sets configurations as active, individually. For each configuration, use gsutil compute instances list to get a list of compute resources.
+C. Go to Cloud Shell and export this information to Cloud Storage on a daily basis.
+D. Go to GCP Console and export this information to Cloud SQL on a daily basis.
+
+Ans: A
+
+Q85. You have a large 5-TB AVRO file stored in a Cloud Storage bucket. Your analysts are proficient only in SQL and need access to the data stored in this file. You want to find a cost-effective way to complete their request as soon as possible. What should you do?
+
+A. Load data in Cloud Datastore and run a SQL query against it.
+B. Create a BigQuery table and load data in BigQuery. Run a SQL query on this table and drop this table after you complete your request.
+C. Create external tables in BigQuery that point to Cloud Storage buckets and run a SQL query on these external tables to complete your request.
+D. Create a Hadoop cluster and copy the AVRO file to NDFS by compressing it. Load the file in a hive table and provide access to your analysts so that they can run SQL queries.
+
+Ans: C
+
+Q86. You need to verify that a Google Cloud Platform service account was created at a particular time. What should you do?
+
+A. Filter the Activity log to view the Configuration category. Filter the Resource type to Service Account.
+B. Filter the Activity log to view the Configuration category. Filter the Resource type to Google Project.
+C. Filter the Activity log to view the Data Access category. Filter the Resource type to Service Account.
+D. Filter the Activity log to view the Data Access category. Filter the Resource type to Google Project.
+
+Ans: A
+
+Q87. You deployed an LDAP server on Compute Engine that is reachable via TLS through port 636 using UDP. You want to make sure it is reachable by clients over that port. What should you do?
+
+A. Add the network tag allow-udp-636 to the VM instance running the LDAP server.
+B. Create a route called allow-udp-636 and set the next hop to be the VM instance running the LDAP server.
+C. Add a network tag of your choice to the instance. Create a firewall rule to allow ingress on UDP port 636 for that network tag.
+D. Add a network tag of your choice to the instance running the LDAP server. Create a firewall rule to allow egress on UDP port 636 for that network tag.
+
+Ans: C
+
+Q88. You need to set a budget alert for use of Compute Engineer services on one of the three Google Cloud Platform projects that you manage. All three projects are linked to a single billing account. What should you do?
+
+A. Verify that you are the project billing administrator. Select the associated billing account and create a budget and alert for the appropriate project.
+B. Verify that you are the project billing administrator. Select the associated billing account and create a budget and a custom alert.
+C. Verify that you are the project administrator. Select the associated billing account and create a budget for the appropriate project.
+D. Verify that you are project administrator. Select the associated billing account and create a budget and a custom alert.
+
+Ans: A
+
+Q89. You are migrating a production-critical on-premises application that requires 96 vCPUs to perform its task. You want to make sure the application runs in a similar environment on GCP. What should you do?
+
+A. When creating the VM, use machine type n1-standard-96.
+B. When creating the VM, use Intel Skylake as the CPU platform.
+C. Create the VM using Compute Engine default settings. Use gcloud to modify the running instance to have 96 vCPUs.
+D. Start the VM using Compute Engine default settings, and adjust as you go based on Rightsizing Recommendations.
+
+Ans: A
+
+Q90. You want to configure a solution for archiving data in a Cloud Storage bucket. The solution must be cost-effective. Data with multiple versions should be archived after 30 days. Previous versions are accessed once a month for reporting. This archive data is also occasionally updated at month-end. What should you do?
+
+A. Add a bucket lifecycle rule that archives data with newer versions after 30 days to Coldline Storage.
+B. Add a bucket lifecycle rule that archives data with newer versions after 30 days to Nearline Storage.
+C. Add a bucket lifecycle rule that archives data from regional storage after 30 days to Coldline Storage.
+D. Add a bucket lifecycle rule that archives data from regional storage after 30 days to Nearline Storage.
+
+Ans: B
+
+Q91. Your company's infrastructure is on-premises, but all machines are running at maximum capacity. You want to burst to Google Cloud. The workloads on Google
+Cloud must be able to directly communicate to the workloads on-premises using a private IP range. What should you do?
+
+A. In Google Cloud, configure the VPC as a host for Shared VPC.
+B. In Google Cloud, configure the VPC for VPC Network Peering.
+C. Create bastion hosts both in your on-premises environment and on Google Cloud. Configure both as proxy servers using their public IP addresses.
+D. Set up Cloud VPN between the infrastructure on-premises and Google Cloud.
+
+Ans: D
+
+Q92. You want to select and configure a solution for storing and archiving data on Google Cloud Platform. You need to support compliance objectives for data from one geographic location. This data is archived after 30 days and needs to be accessed annually. What should you do?
+
+A. Select Multi-Regional Storage. Add a bucket lifecycle rule that archives data after 30 days to Coldline Storage.
+B. Select Multi-Regional Storage. Add a bucket lifecycle rule that archives data after 30 days to Nearline Storage.
+C. Select Regional Storage. Add a bucket lifecycle rule that archives data after 30 days to Nearline Storage.
+D. Select Regional Storage. Add a bucket lifecycle rule that archives data after 30 days to Coldline Storage.
+
+Ans: D
+
+Q93. Your company uses BigQuery for data warehousing. Over time, many different business units in your company have created 1000+ datasets across hundreds of projects. Your CIO wants you to examine all datasets to find tables that contain an employee_ssn column. You want to minimize effort in performing this task.
+What should you do?
+
+A. Go to Data Catalog and search for employee_ssn in the search box.
+B. Write a shell script that uses the bq command line tool to loop through all the projects in your organization.
+C. Write a script that loops through all the projects in your organization and runs a query on INFORMATION_SCHEMA.COLUMNS view to find the employee_ssn column.
+D. Write a Cloud Dataflow job that loops through all the projects in your organization and runs a query on INFORMATION_SCHEMA.COLUMNS view to find employee_ssn column.
+
+Ans: A
+
+Q94.
+
+Ans:
+
+Q95. You want to find out when users were added to Cloud Spanner Identity Access Management (IAM) roles on your Google Cloud Platform (GCP) project. What should you do in the GCP Console?
+
+A. Open the Cloud Spanner console to review configurations.
+B. Open the IAM & admin console to review IAM policies for Cloud Spanner roles.
+C. Go to the Stackdriver Monitoring console and review information for Cloud Spanner.
+D. Go to the Stackdriver Logging console, review admin activity logs, and filter them for Cloud Spanner IAM roles.
+
+Ans: D
+
+Q96. Your company implemented BigQuery as an enterprise data warehouse. Users from multiple business units run queries on this data warehouse. However, you notice that query costs for BigQuery are very high, and you need to control costs. Which two methods should you use? (Choose two.)
+
+A. Split the users from business units to multiple projects.
+B. Apply a user- or project-level custom query quota for BigQuery data warehouse.
+C. Create separate copies of your BigQuery data warehouse for each business unit.
+D. Split your BigQuery data warehouse into multiple data warehouses for each business unit.
+E. Change your BigQuery query model from on-demand to flat rate. Apply the appropriate number of slots to each Project.
+
+Ans: B,E
+
+Q97. You are building a product on top of Google Kubernetes Engine (GKE). You have a single GKE cluster. For each of your customers, a Pod is running in that cluster, and your customers can run arbitrary code inside their Pod. You want to maximize the isolation between your customers' Pods. What should you do?
+
+A. Use Binary Authorization and whitelist only the container images used by your customers' Pods.
+B. Use the Container Analysis API to detect vulnerabilities in the containers used by your customers' Pods.
+C. Create a GKE node pool with a sandbox type configured to gvisor. Add the parameter runtimeClassName: gvisor to the specification of your customers' Pods.
+D. Use the cos_containerd image for your GKE nodes. Add a nodeSelector with the value cloud.google.com/gke-os-distribution: cos_containerd to the specification of your customers' Pods.
+
+Ans: C
+
+Q98.
+
+Ans:
+
+Q99. Your finance team wants to view the billing report for your projects. You want to make sure that the finance team does not get additional permissions to the project. What should you do?
+
+A. Add the group for the finance team to roles/billing user role.
+B. Add the group for the finance team to roles/billing admin role.
+C. Add the group for the finance team to roles/billing viewer role.
+D. Add the group for the finance team to roles/billing project/Manager role.
+
+Ans: C
+
+Q100. Your organization has strict requirements to control access to Google Cloud projects. You need to enable your Site Reliability Engineers (SREs) to approve requests from the Google Cloud support team when an SRE opens a support case. You want to follow Google-recommended practices. What should you do?
+
+A. Add your SREs to roles/iam.roleAdmin role.
+B. Add your SREs to roles/accessapproval.approver role.
+C. Add your SREs to a group and then add this group to roles/iam.roleAdmin.role.
+D. Add your SREs to a group and then add this group to roles/accessapproval.approver role.
+
+Ans: D
+
+Q101. You need to host an application on a Compute Engine instance in a project shared with other teams. You want to prevent the other teams from accidentally causing downtime on that application. Which feature should you use?
+
+A. Use a Shielded VM.
+B. Use a Preemptible VM.
+C. Use a sole-tenant node.
+D. Enable deletion protection on the instance.
+
+Ans: D
+
+Q102. Your organization needs to grant users access to query datasets in BigQuery but prevent them from accidentally deleting the datasets. You want a solution that follows Google-recommended practices. What should you do?
+
+A. Add users to roles/bigquery user role only, instead of roles/bigquery dataOwner.
+B. Add users to roles/bigquery dataEditor role only, instead of roles/bigquery dataOwner.
+C. Create a custom role by removing delete permissions, and add users to that role only.
+D. Create a custom role by removing delete permissions. Add users to the group, and then add the group to the custom role.
+
+Ans: D
+
+Q103. You have a developer laptop with the Cloud SDK installed on Ubuntu. The Cloud SDK was installed from the Google Cloud Ubuntu package repository. You want to test your application locally on your laptop with Cloud Datastore. What should you do?
+
+A. Export Cloud Datastore data using gcloud datastore export.
+B. Create a Cloud Datastore index using gcloud datastore indexes create.
+C. Install the google-cloud-sdk-datastore-emulator component using the apt get install command.
+D. Install the cloud-datastore-emulator component using the gcloud components install command.
+
+Ans: D
+
+Q104. Your company set up a complex organizational structure on Google Cloud. The structure includes hundreds of folders and projects. Only a few team members should be able to view the hierarchical structure. You need to assign minimum permissions to these team members, and you want to follow Google-recommended practices. What should you do?
+
+A. Add the users to roles/browser role.
+B. Add the users to roles/iam.roleViewer role.
+C. Add the users to a group, and add this group to roles/browser.
+D. Add the users to a group, and add this group to roles/iam.roleViewer role.
+
+Ans: C
+
+Q105. Your company has a single sign-on (SSO) identity provider that supports Security Assertion Markup Language (SAML) integration with service providers. Your company has users in Cloud Identity. You would like users to authenticate using your company's SSO provider. What should you do?
+
+A. In Cloud Identity, set up SSO with Google as an identity provider to access custom SAML apps.
+B. In Cloud Identity, set up SSO with a third-party identity provider with Google as a service provider.
+C. Obtain OAuth 2.0 credentials, configure the user consent screen, and set up OAuth 2.0 for Mobile & Desktop Apps.
+D. Obtain OAuth 2.0 credentials, configure the user consent screen, and set up OAuth 2.0 for Web Server Applications.
+
+Ans: B
+
+Q106. Your organization has a dedicated person who creates and manages all service accounts for Google Cloud projects. You need to assign this person the minimum role for projects. What should you do?
+
+A. Add the user to roles/iam.roleAdmin role.
+B. Add the user to roles/iam.securityAdmin role.
+C. Add the user to roles/iam.serviceAccountUser role.
+D. Add the user to roles/iam.serviceAccountAdmin role.
+
+Ans: D
+
+Q107. You are building an archival solution for your data warehouse and have selected Cloud Storage to archive your data. Your users need to be able to access this archived data once a quarter for some regulatory requirements. You want to select a cost-efficient option. Which storage option should you use?
+
+A. Cold Storage
+B. Nearline Storage
+C. Regional Storage
+D. Multi-Regional Storage
+
+Ans: B
+
+Q108. A team of data scientists infrequently needs to use a Google Kubernetes Engine (GKE) cluster that you manage. They require GPUs for some long-running, non- restartable jobs. You want to minimize cost. What should you do?
+
+A. Enable node auto-provisioning on the GKE cluster.
+B. Create a VerticalPodAutscaler for those workloads.
+C. Create a node pool with preemptible VMs and GPUs attached to those VMs.
+D. Create a node pool of instances with GPUs, and enable autoscaling on this node pool with a minimum size of 1.
+
+Ans: A
+
+Q109. Your organization has user identities in Active Directory. Your organization wants to use Active Directory as their source of truth for identities. Your organization wants to have full control over the Google accounts used by employees for all Google services, including your Google Cloud Platform (GCP) organization. What should you do?
+
+A. Use Google Cloud Directory Sync (GCDS) to synchronize users into Cloud Identity.
+B. Use the cloud Identity APIs and write a script to synchronize users to Cloud Identity.
+C. Export users from Active Directory as a CSV and import them to Cloud Identity via the Admin Console.
+D. Ask each employee to create a Google account using self signup. Require that each employee use their company email address and password.
+
+Ans: A
+
+Q110. You have successfully created a development environment in a project for an application. This application uses Compute Engine and Cloud SQL. Now you need to create a production environment for this application. The security team has forbidden the existence of network routes between these 2 environments and has asked you to follow Google-recommended practices. What should you do?
+
+A. Create a new project, enable the Compute Engine and Cloud SQL APIs in that project, and replicate the setup you have created in the development environment.
+B. Create a new production subnet in the existing VPC and a new production Cloud SQL instance in your existing project, and deploy your application using those resources.
+C. Create a new project, modify your existing VPC to be a Shared VPC, share that VPC with your new project, and replicate the setup you have in the development environment in that new project in the Shared VPC.
+D. Ask the security team to grant you the Project Editor role in an existing production project used by another division of your company. Once they grant you that role, replicate the setup you have in the development environment in that project.
+
+Ans: A
+
+Q111. Your management has asked an external auditor to review all the resources in a specific project. The security team has enabled the Organization Policy called
+Domain Restricted Sharing on the organization node by specifying only your Cloud Identity domain. You want the auditor to only be able to view, but not modify, the resources in that project. What should you do?
+
+A. Ask the auditor for their Google account, and give them the Viewer role on the project.
+B. Ask the auditor for their Google account, and give them the Security Reviewer role on the project.
+C. Create a temporary account for the auditor in Cloud Identity, and give that account the Viewer role on the project.
+D. Create a temporary account for the auditor in Cloud Identity, and give that account the Security Reviewer role on the project.
+
+Ans: C
+
+Q112. You have a workload running on Compute Engine that is critical to your business. You want to ensure that the data on the boot disk of this workload is backed up regularly. You need to be able to restore a backup as quickly as possible in case of disaster. You also want older backups to be cleaned automatically to save on cost. You want to follow Google-recommended practices. What should you do?
+
+A. Create a Cloud Function to create an instance template.
+B. Create a snapshot schedule for the disk using the desired interval.
+C. Create a cron job to create a new disk from the disk using gcloud.
+D. Create a Cloud Task to create an image and export it to Cloud Storage.
+
+Ans: B
+
+Q113. You need to assign a Cloud Identity and Access Management (Cloud IAM) role to an external auditor. The auditor needs to have permissions to review your
+Google Cloud Platform (GCP) Audit Logs and also to review your Data Access logs. What should you do?
+
+A. Assign the auditor the IAM role roles/logging.privateLogViewer. Perform the export of logs to Cloud Storage.
+B. Assign the auditor the IAM role roles/logging.privateLogViewer. Direct the auditor to also review the logs for changes to Cloud IAM policy.
+C. Assign the auditor's IAM user to a custom role that has logging.privateLogEntries.list permission. Perform the export of logs to Cloud Storage.
+D. Assign the auditor's IAM user to a custom role that has logging.privateLogEntries.list permission. Direct the auditor to also review the logs for changes to Cloud IAM policy.
+
+Ans: B
+
+Q114. You are managing several Google Cloud Platform (GCP) projects and need access to all logs for the past 60 days. You want to be able to explore and quickly analyze the log contents. You want to follow Google-recommended practices to obtain the combined logs for all projects. What should you do?
+
+A. Navigate to Stackdriver Logging and select resource.labels.project_id="*"
+B. Create a Stackdriver Logging Export with a Sink destination to a BigQuery dataset. Configure the table expiration to 60 days.
+C. Create a Stackdriver Logging Export with a Sink destination to Cloud Storage. Create a lifecycle rule to delete objects after 60 days.
+D. Configure a Cloud Scheduler job to read from Stackdriver and store the logs in BigQuery. Configure the table expiration to 60 days.
+
+Ans: A
+
+Q115. You need to reduce GCP service costs for a division of your company using the fewest possible steps. You need to turn off all configured services in an existing
+GCP project. What should you do?
+
+A. 1. Verify that you are assigned the Project Owners IAM role for this project. 2. Locate the project in the GCP console, click Shut down and then enter the project ID.
+B. 1. Verify that you are assigned the Project Owners IAM role for this project. 2. Switch to the project in the GCP console, locate the resources and delete them.
+C. 1. Verify that you are assigned the Organizational Administrator IAM role for this project. 2. Locate the project in the GCP console, enter the project ID and then click Shut down.
+D. 1. Verify that you are assigned the Organizational Administrators IAM role for this project. 2. Switch to the project in the GCP console, locate the resources and delete them.
+
+Ans: A
+
+Q116. You are configuring service accounts for an application that spans multiple projects. Virtual machines (VMs) running in the web-applications project need access to BigQuery datasets in crm-databases-proj. You want to follow Google-recommended practices to give access to the service account in the web-applications project. What should you do?
+
+A. Give ג€project ownerג€ for web-applications appropriate roles to crm-databases-proj.
+B. Give ג€project ownerג€ role to crm-databases-proj and the web-applications project.
+C. Give ג€project ownerג€ role to crm-databases-proj and bigquery.dataViewer role to web-applications.
+D. Give bigquery.dataViewer role to crm-databases-proj and appropriate roles to web-applications.
+
+Ans: D
+
+Q117. An employee was terminated, but their access to Google Cloud was not removed until 2 weeks later. You need to find out if this employee accessed any sensitive customer information after their termination. What should you do?
+
+A. View System Event Logs in Cloud Logging. Search for the user's email as the principal.
+B. View System Event Logs in Cloud Logging. Search for the service account associated with the user.
+C. View Data Access audit logs in Cloud Logging. Search for the user's email as the principal.
+D. View the Admin Activity log in Cloud Logging. Search for the service account associated with the user.
+
+Ans: C
+
+Q118. You need to create a custom IAM role for use with a GCP service. All permissions in the role must be suitable for production use. You also want to clearly share with your organization the status of the custom role. This will be the first version of the custom role. What should you do?
+
+A. Use permissions in your role that use the 'supported' support level for role permissions. Set the role stage to ALPHA while testing the role permissions.
+B. Use permissions in your role that use the 'supported' support level for role permissions. Set the role stage to BETA while testing the role permissions.
+C. Use permissions in your role that use the 'testing' support level for role permissions. Set the role stage to ALPHA while testing the role permissions.
+D. Use permissions in your role that use the 'testing' support level for role permissions. Set the role stage to BETA while testing the role permissions.
+
+Ans: A
+
+Q119. Your company has a large quantity of unstructured data in different file formats. You want to perform ETL transformations on the data. You need to make the data accessible on Google Cloud so it can be processed by a Dataflow job. What should you do?
+
+A. Upload the data to BigQuery using the bq command line tool.
+B. Upload the data to Cloud Storage using the gsutil command line tool.
+C. Upload the data into Cloud SQL using the import function in the console.
+D. Upload the data into Cloud Spanner using the import function in the console.
+
+Ans: B
+
+Q120. You need to manage multiple Google Cloud projects in the fewest steps possible. You want to configure the Google Cloud SDK command line interface (CLI) so that you can easily manage multiple projects. What should you do?
+
+A. 1. Create a configuration for each project you need to manage. 2. Activate the appropriate configuration when you work with each of your assigned Google Cloud projects.
+B. 1. Create a configuration for each project you need to manage. 2. Use gcloud init to update the configuration values when you need to work with a non-default project
+C. 1. Use the default configuration for one project you need to manage. 2. Activate the appropriate configuration when you work with each of your assigned Google Cloud projects.
+D. 1. Use the default configuration for one project you need to manage. 2. Use gcloud init to update the configuration values when you need to work with a non-default project.
+
+Ans: A
+
+Q121. Your managed instance group raised an alert stating that new instance creation has failed to create new instances. You need to maintain the number of running instances specified by the template to be able to process expected application traffic. What should you do?
+
+A. Create an instance template that contains valid syntax which will be used by the instance group. Delete any persistent disks with the same name as instance names.
+B. Create an instance template that contains valid syntax that will be used by the instance group. Verify that the instance name and persistent disk name values are not the same in the template.
+C. Verify that the instance template being used by the instance group contains valid syntax. Delete any persistent disks with the same name as instance names. Set the disks.autoDelete property to true in the instance template.
+D. Delete the current instance template and replace it with a new instance template. Verify that the instance name and persistent disk name values are not the same in the template. Set the disks.autoDelete property to true in the instance template.
+
+Ans: A
+
+Q122. Your company is moving from an on-premises environment to Google Cloud. You have multiple development teams that use Cassandra environments as backend databases. They all need a development environment that is isolated from other Cassandra instances. You want to move to Google Cloud quickly and with minimal support effort. What should you do?
+
+A. 1. Build an instruction guide to install Cassandra on Google Cloud. 2. Make the instruction guide accessible to your developers.
+B. 1. Advise your developers to go to Cloud Marketplace. 2. Ask the developers to launch a Cassandra image for their development work.
+C. 1. Build a Cassandra Compute Engine instance and take a snapshot of it. 2. Use the snapshot to create instances for your developers.
+D. 1. Build a Cassandra Compute Engine instance and take a snapshot of it. 2. Upload the snapshot to Cloud Storage and make it accessible to your developers. 3. Build instructions to create a Compute Engine instance from the snapshot so that developers can do it themselves.
+
+Ans: B
+
+Q123. You have a Compute Engine instance hosting a production application. You want to receive an email if the instance consumes more than 90% of its CPU resources for more than 15 minutes. You want to use Google services. What should you do?
+
+A. 1. Create a consumer Gmail account. 2. Write a script that monitors the CPU usage. 3. When the CPU usage exceeds the threshold, have that script send an email using the Gmail account and smtp.gmail.com on port 25 as SMTP server.
+B. 1. Create a Cloud Monitoring Workspace and associate your Google Cloud Platform (GCP) project with it. 2. Create a Cloud Monitoring Alerting Policy that uses the threshold as a trigger condition. 3. Configure your email address in the notification channel.
+C. 1. Create a Cloud Monitoring Workspace and associate your GCP project with it. 2. Write a script that monitors the CPU usage and sends it as a custom metric to Cloud Monitoring. 3. Create an uptime check for the instance in Cloud Monitoring.
+D. 1. In Cloud Logging, create a logs-based metric to extract the CPU usage by using this regular expression: CPU Usage: ([0-9] {1,3})% 2. In Cloud Monitoring, create an Alerting Policy based on this metric. 3. Configure your email address in the notification channel.
+
+Ans: B
+
+Q124.
+
+Ans:
+
+Q125. Your company publishes large files on an Apache web server that runs on a Compute Engine instance. The Apache web server is not the only application running in the project. You want to receive an email when the egress network costs for the server exceed 100 dollars for the current month as measured by Google Cloud.
+What should you do?
+
+A. Set up a budget alert on the project with an amount of 100 dollars, a threshold of 100%, and notification type of ג€email.ג€
+B. Set up a budget alert on the billing account with an amount of 100 dollars, a threshold of 100%, and notification type of ג€email.ג€
+C. Export the billing data to BigQuery. Create a Cloud Function that uses BigQuery to sum the egress network costs of the exported billing data for the Apache web server for the current month and sends an email if it is over 100 dollars. Schedule the Cloud Function using Cloud Scheduler to run hourly.
+D. Use the Cloud Logging Agent to export the Apache web server logs to Cloud Logging. Create a Cloud Function that uses BigQuery to parse the HTTP response log data in Cloud Logging for the current month and sends an email if the size of all HTTP responses, multiplied by current Google Cloud egress prices, totals over 100 dollars. Schedule the Cloud Function using Cloud Scheduler to run hourly.
+
+Ans: C
+
+Q126. You have designed a solution on Google Cloud that uses multiple Google Cloud products. Your company has asked you to estimate the costs of the solution. You need to provide estimates for the monthly total cost. What should you do?
+
+A. For each Google Cloud product in the solution, review the pricing details on the products pricing page. Use the pricing calculator to total the monthly costs for each Google Cloud product.
+B. For each Google Cloud product in the solution, review the pricing details on the products pricing page. Create a Google Sheet that summarizes the expected monthly costs for each product.
+C. Provision the solution on Google Cloud. Leave the solution provisioned for 1 week. Navigate to the Billing Report page in the Cloud Console. Multiply the 1 week cost to determine the monthly costs.
+D. Provision the solution on Google Cloud. Leave the solution provisioned for 1 week. Use Cloud Monitoring to determine the provisioned and used resource amounts. Multiply the 1 week cost to determine the monthly costs.
+
+Ans: A
+
+Q127. You have an application that receives SSL-encrypted TCP traffic on port 443. Clients for this application are located all over the world. You want to minimize latency for the clients. Which load balancing option should you use?
+
+A. HTTPS Load Balancer
+B. Network Load Balancer
+C. SSL Proxy Load Balancer
+D. Internal TCP/UDP Load Balancer. Add a firewall rule allowing ingress traffic from 0.0.0.0/0 on the target instances.
+
+Ans: C
+
+Q128. You have an application on a general-purpose Compute Engine instance that is experiencing excessive disk read throttling on its Zonal SSD Persistent Disk. The application primarily reads large files from disk. The disk size is currently 350 GB. You want to provide the maximum amount of throughput while minimizing costs.
+What should you do?
+
+A. Increase the size of the disk to 1 TB.
+B. Increase the allocated CPU to the instance.
+C. Migrate to use a Local SSD on the instance.
+D. Migrate to use a Regional SSD on the instance.
+
+Ans: C
+
+Q129. Your Dataproc cluster runs in a single Virtual Private Cloud (VPC) network in a single subnet with range 172.16.20.128/25. There are no private IP addresses available in the VPC network. You want to add new VMs to communicate with your cluster using the minimum number of steps. What should you do?
+
+A. Modify the existing subnet range to 172.16.20.0/24.
+B. Create a new Secondary IP Range in the VPC and configure the VMs to use that range.
+C. Create a new VPC network for the VMs. Enable VPC Peering between the VMs' VPC network and the Dataproc cluster VPC network.
+D. Create a new VPC network for the VMs with a subnet of 172.32.0.0/16. Enable VPC network Peering between the Dataproc VPC network and the VMs VPC network. Configure a custom Route exchange.
+
+Ans: A
+
+Q130. You manage an App Engine Service that aggregates and visualizes data from BigQuery. The application is deployed with the default App Engine Service account.
+The data that needs to be visualized resides in a different project managed by another team. You do not have access to this project, but you want your application to be able to read data from the BigQuery dataset. What should you do?
+
+A. Ask the other team to grant your default App Engine Service account the role of BigQuery Job User.
+B. Ask the other team to grant your default App Engine Service account the role of BigQuery Data Viewer.
+C. In Cloud IAM of your project, ensure that the default App Engine service account has the role of BigQuery Data Viewer.
+D. In Cloud IAM of your project, grant a newly created service account from the other team the role of BigQuery Job User in your project.
+
+Ans: B
+
+Q131.
+
+Ans:
+
+Q132.
+
+Ans:
+
+Q133.
+
+Ans:
+
+Q134.
+
+Ans:
+
+Q135.
+
+Ans:
+
+Q136.
+
+Ans:
+
+Q137.
+
+Ans:
+
+Q138.
+
+Ans:
+
+Q139.
+
+Ans:
+
+Q140.
+
+Ans:
+
+Q141.
+
+Ans:
+
+Q142.
+
+Ans:
+
+Q143.
+
+Ans:
+
+Q144.
+
+Ans:
+
+Q145.
+
+Ans:
+
+Q146.
+
+Ans:
+
+Q147.
+
+Ans:
+
+Q148.
+
+Ans:
+
+Q149.
+
+Ans:
+
+Q150.
+
+Ans:
+
+Q151.
+
+Ans:
+
+Q152.
+
+Ans:
+
+Q153.
+
+Ans:
+
+Q154.
+
+Ans:
+
+Q155.
+
+Ans:
+
+Q156.
+
+Ans:
+
+Q157.
+
+Ans:
+
+Q158.
+
+Ans:
+
+Q159.
+
+Ans:
+
+Q160.
+
+Ans:
+
+Q161.
+
+Ans:
+
+Q162.
+
+Ans:
+
+Q163.
+
+Ans:
+
+Q164.
+
+Ans:
+
+Q165.
+
+Ans:
+
+Q166.
+
+Ans:
+
+Q167.
+
+Ans:
+
+Q168.
+
+Ans:
+
+Q169.
+
+Ans:
+
+Q170.
+
+Ans:
+
+Q171.
+
+Ans:
+
+Q172.
+
+Ans:
+
+Q173.
+
+Ans:
+
+Q174.
+
+Ans:
+
+Q175.
+
+Ans:
+
+Q176.
+
+Ans:
+
+Q177.
+
+Ans:
+
+Q178.
+
+Ans:
+
+Q179.
+
+Ans:
+
+Q180.
+
+Ans:
+
+Q181.
+
+Ans:
+
+Q182.
+
+Ans:
+
+Q183.
+
+Ans:
+
+Q184.
+
+Ans:
+
+Q185.
+
+Ans:
+
+Q186.
+
+Ans:
+
+Q187.
+
+Ans:
+
+Q188.
+
+Ans:
+
+Q189.
+
+Ans:
+
+Q190.
+
+Ans:
+
+Q191.
+
+Ans:
+
+Q192.
+
+Ans:
+
+Q193.
+
+Ans:
+
+Q194.
+
+Ans:
+
+Q195.
+
+Ans:
+
+Q196.
+
+Ans:
+
+Q197.
+
+Ans:
+
+Q198.
+
+Ans:
+
+Q199.
+
+Ans:
+
+Q200.
+
+Ans:
+
+Q201.
+
+Ans:
+
+Q202.
+
+Ans:
+
+Q203.
+
+Ans:
+
+Q204.
+
+Ans:
+
+Q205.
+
+Ans:
+
+Q206.
+
+Ans:
+
+Q207.
+
+Ans:
+
+Q208.
+
+Ans:
+
+Q209.
+
+Ans:
+
+Q210.
+
+Ans:
+
+Q211.
+
+Ans:
+
+Q212.
+
+Ans:
+
+Q213.
+
+Ans:
+
+Q214.
+
+Ans:
+
+Q215.
+
+Ans:
+
+Q216.
+
+Ans:
+
+Q217.
+
+Ans:
+
+Q218.
+
+Ans:
+
+Q219.
+
+Ans:
+
+Q220.
+
+Ans:
+
+Q221.
+
+Ans:
+
+Q222.
+
+Ans:
+
+Q223.
+
+Ans:
+
+Q224.
+
+Ans:
+
+Q225.
+
+Ans:
+
+Q226.
+
+Ans:
+
+Q227.
+
+Ans:
+
+Q228.
+
+Ans:
+
+Q229.
+
+Ans:
+
+Q230.
+
+Ans:
+
+Q231.
+
+Ans:
+
+Q232.
+
+Ans:
+
+Q233.
+
+Ans:
+
+Q234.
+
+Ans:
+
+Q235.
+
+Ans:
+
+Q236.
+
+Ans:
+
+Q237.
+
+Ans:
+
+Q238.
+
+Ans:
+
+Q239.
+
+Ans:
+
+Q240.
+
+Ans:
+
+Q241.
+
+Ans:
+
+Q242.
+
+Ans:
+
+Q243.
+
+Ans:
+
+Q244.
+
+Ans:
+
+Q245.
+
+Ans:
+
+Q246.
+
+Ans:
+
+Q247.
+
+Ans:
+
+Q248.
+
+Ans:
+
+Q249.
+
+Ans:
+
+Q250.
+
+Ans:
+
+Q251.
+
+Ans:
+
+Q252.
+
+Ans:
+
+Q253.
+
+Ans:
+
+Q254.
+
+Ans:
+
+Q255.
+
+Ans:
+
+Q256.
+
+Ans:
+
+Q257.
+
+Ans:
+
+Q258.
+
+Ans:
+
+Q259.
+
+Ans:
+
+Q260.
+
+Ans:
+
+Q261.
+
+Ans:
+
+Q262.
+
+Ans:
+
+Q263.
+
+Ans:
+
+Q264.
+
+Ans:
+
+Q265.
+
+Ans:
+
+Q266.
+
+Ans:
+
+Q267.
+
+Ans:
+
+Q268.
+
+Ans:
+
+Q269.
+
+Ans:
+
+Q270.
+
+Ans:
+
+Q271.
+
+Ans:
+
+Q272.
+
+Ans:
+
+Q273.
+
+Ans:
+
+Q274.
+
+Ans:
+
+Q275.
+
+Ans:
+
+Q276.
+
+Ans:
+
+Q277.
+
+Ans:
+
+Q278.
+
+Ans:
+
+Q279.
