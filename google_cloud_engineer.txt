@@ -888,7 +888,7 @@ B. Create a VerticalPodAutscaler for those workloads.
 C. Create a node pool with preemptible VMs and GPUs attached to those VMs.
 D. Create a node pool of instances with GPUs, and enable autoscaling on this node pool with a minimum size of 1.
 
-Ans: A
+Ans: D
 
 Q109. Your organization has user identities in Active Directory. Your organization wants to use Active Directory as their source of truth for identities. Your organization wants to have full control over the Google accounts used by employees for all Google services, including your Google Cloud Platform (GCP) organization. What should you do?
 
