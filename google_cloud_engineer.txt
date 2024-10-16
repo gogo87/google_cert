@@ -944,7 +944,7 @@ B. Create a Stackdriver Logging Export with a Sink destination to a BigQuery dat
 C. Create a Stackdriver Logging Export with a Sink destination to Cloud Storage. Create a lifecycle rule to delete objects after 60 days.
 D. Configure a Cloud Scheduler job to read from Stackdriver and store the logs in BigQuery. Configure the table expiration to 60 days.
 
-Ans: A
+Ans: B
 
 Q115. You need to reduce GCP service costs for a division of your company using the fewest possible steps. You need to turn off all configured services in an existing
 GCP project. What should you do?
