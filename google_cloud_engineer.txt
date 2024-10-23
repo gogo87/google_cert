@@ -1435,21 +1435,21 @@ D. Create a new revision with the new version of the application. Add an HTTP Lo
 
 Ans: B
 
-Q167. Your web application has been running successfully on Cloud Run for Anthos. You want to evaluate an updated version of the application with a specific percentage of your production users (canary deployment). What should you do?
+Q167. Your company developed a mobile game that is deployed on Google Cloud. Gamers are connecting to the game with their personal phones over the Internet. The game sends UDP packets to update the servers about the gamers' actions while they are playing in multiplayer mode. Your game backend can scale over multiple virtual machines (VMs), and you want to expose the VMs over a single IP address. What should you do?
 
-A. Create a new service with the new version of the application. Split traffic between this version and the version that is currently running.
-B. Create a new revision with the new version of the application. Split traffic between this version and the version that is currently running.
-C. Create a new service with the new version of the application. Add an HTTP Load Balancer in front of both services.
-D. Create a new revision with the new version of the application. Add an HTTP Load Balancer in front of both revisions.
+A. Configure an SSL Proxy load balancer in front of the application servers.
+B. Configure an Internal UDP load balancer in front of the application servers.
+C. Configure an External HTTP(s) load balancer in front of the application servers.
+D. Configure an External Network load balancer in front of the application servers.
 
-Ans: B
+Ans: D
 
-Q168. Your web application has been running successfully on Cloud Run for Anthos. You want to evaluate an updated version of the application with a specific percentage of your production users (canary deployment). What should you do?
+Q168. You are working for a hospital that stores its medical images in an on-premises data room. The hospital wants to use Cloud Storage for archival storage of these images. The hospital wants an automated process to upload any new medical images to Cloud Storage. You need to design and implement a solution. What should you do?
 
-A. Create a new service with the new version of the application. Split traffic between this version and the version that is currently running.
-B. Create a new revision with the new version of the application. Split traffic between this version and the version that is currently running.
-C. Create a new service with the new version of the application. Add an HTTP Load Balancer in front of both services.
-D. Create a new revision with the new version of the application. Add an HTTP Load Balancer in front of both revisions.
+A. Create a Pub/Sub topic, and enable a Cloud Storage trigger for the Pub/Sub topic. Create an application that sends all medical images to the Pub/Sub topic.
+B. Deploy a Dataflow job from the batch template, ג€Datastore to Cloud Storage.ג€ Schedule the batch job on the desired interval.
+C. Create a script that uses the gsutil command line interface to synchronize the on-premises storage with Cloud Storage. Schedule the script as a cron job.
+D. In the Cloud Console, go to Cloud Storage. Upload the relevant images to the appropriate bucket.
 
 Ans: B
 
