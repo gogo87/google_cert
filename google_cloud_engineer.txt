@@ -2394,7 +2394,7 @@ C. Download your Cloud Identity user account key. Place the key file in a folder
 D. Run gcloud config set compute/zone $my_zone to set the default zone for gcloud CLI.
 E. Run gcloud config set project $my_project to set the default project for gcloud CLI.
 
-Ans: A
+Ans: A,E
 
 Q266. You are planning to migrate your on-premises data to Google Cloud. The data includes:
 
